@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Giphy Search</title>
+        <style>
+            body {
+                background-color: #f1f1f1;
+                color: #333;
+                position:fixed;
+            }
+            p{
+                font-size:80px;
+                padding-top:80px;
+                padding-left:360px;
+                text-align:center;
+            }
+            #ip1{
+                margin-bottom:45px;
+                margin-left:360px;
+                border-radius:25px;
+                border: 2px solid black;
+                width:500px;
+                height:40px;
+            }
+        </style>
+    </head>
+    <body>
+        <p>Giphy Search</p>
+        <input type="text" id="ip1" placeholder="Search for gifs and enter text"/>
+        <script>
+            const searchInput = document.getElementById('ip1');
+            searchInput.addEventListener('keyup', function(event) {
+                if (event.key === 'Enter') {
+                    const searchText = searchInput.value.trim();
+                    if (searchText !== '') {
+                        localStorage.setItem('searchTerm', searchText);
+                        window.location.href = 'giphy_basic.html';
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
